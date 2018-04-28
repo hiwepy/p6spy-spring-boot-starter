@@ -293,7 +293,7 @@
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <maven-surefire-plugin.vertsion>2.21.0</maven-surefire-plugin.vertsion>
 		<maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
-		<p6spy.version>3.6.0</p6spy.version>
+		<p6spy.version>3.7.0</p6spy.version>
 		<sqlprofiler.version>1.1</sqlprofiler.version>
 	</properties>
 
@@ -315,7 +315,7 @@
 		    <artifactId>slf4j-log4j12</artifactId>
 		    <scope>test</scope>
 		</dependency>
-
+		
 		<!-- Core starter, including auto-configuration support, logging and YAML -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -326,16 +326,6 @@
 					<artifactId>spring-boot-starter-logging</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-		<!-- 引入log4j2依赖 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>
-		<!-- 加上这个才能辨认到log4j2.yml文件 -->
-		<dependency>
-			<groupId>com.fasterxml.jackson.dataformat</groupId>
-			<artifactId>jackson-dataformat-yaml</artifactId>
 		</dependency>
 		<!-- Spring Boot Test 依赖 -->
 		<dependency>
@@ -361,18 +351,11 @@
 			P6SPY提供了如下几个功能： 记录SQL语句的执行时间戳。 记录SQL语句类型 记录SQL填入参数的和没有填入参数的SQL语句
 			根据配置的时间控制SQL语句的执行时间，对超出时间的SQL语句输出到日志文件中
 		-->
+		<!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
 		<dependency>
-			<groupId>p6spy</groupId>
-			<artifactId>p6spy</artifactId>
-			<version>${p6spy.version}</version>
-		</dependency>
-		<!--
-			JDBC SQL Profiler 是一个用来连接到 P6Spy
-			实时显示所执行的SQL语句，并生成统计信息，利用该工具可以对SQL语句进行监控以找出执行缓慢的语句加以优化。-->
-		<dependency>
-			<groupId>sqlprofiler</groupId> 
-			<artifactId>sqlprofiler</artifactId>
-			<version>${sqlprofiler.version}</version> 
+		    <groupId>p6spy</groupId>
+		    <artifactId>p6spy</artifactId>
+		    <version>${p6spy.version}</version>
 		</dependency>
 
 	</dependencies>
