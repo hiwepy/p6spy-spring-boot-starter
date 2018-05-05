@@ -1,19 +1,19 @@
-# spring-boot-starter-ip2region
-ip2region starter for spring boot
+# spring-boot-starter-p6spy
+p6spy starter for spring boot
 
 ### 说明
 
 
- > 基于 ip2region 的 Spring Boot Starter 实现
+ > 基于 p6spy 的 Spring Boot Starter 实现
 
-1. 最新IP数据下载地址： https://github.com/lionsoul2014/ip2region
+1. 最新IP数据下载地址： https://github.com/lionsoul2014/p6spy
 
 ### Maven
 
 ``` xml
 <dependency>
 	<groupId>com.github.vindell</groupId>
-	<artifactId>spring-boot-starter-ip2region</artifactId>
+	<artifactId>spring-boot-starter-p6spy</artifactId>
 	<version>${project.version}</version>
 </dependency>
 ```
@@ -54,14 +54,5 @@ public class Application {
 
 }
 
-```
-
-如果使用外部IP数据，可自定义配置，参考如下：
-```yaml
-ip2region:
-  external: false
-  index-block-size: 4096
-  total-header-size: 8192
-  location: classpath:ip2region/ip2region.db
 ```
 
