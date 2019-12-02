@@ -1,4 +1,4 @@
-# spring-boot-starter-p6spy
+# p6spy-spring-boot-starter
 p6spy starter for spring boot
 
 ### 说明
@@ -13,7 +13,7 @@ p6spy starter for spring boot
 ``` xml
 <dependency>
 	<groupId>com.github.vindell</groupId>
-	<artifactId>spring-boot-starter-p6spy</artifactId>
+	<artifactId>p6spy-spring-boot-starter</artifactId>
 	<version>${project.version}</version>
 </dependency>
 ```
