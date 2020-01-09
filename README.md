@@ -5,16 +5,14 @@ p6spy starter for spring boot
 
 
  > 基于 p6spy 的 Spring Boot Starter 实现
-
-1. 最新IP数据下载地址： https://github.com/lionsoul2014/p6spy
-
+ 
 ### Maven
 
 ``` xml
 <dependency>
 	<groupId>com.github.hiwepy</groupId>
 	<artifactId>p6spy-spring-boot-starter</artifactId>
-	<version>${project.version}</version>
+	<version>1.0.0.RELEASE</version>
 </dependency>
 ```
 
