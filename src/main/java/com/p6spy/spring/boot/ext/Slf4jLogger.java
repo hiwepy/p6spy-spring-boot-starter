@@ -21,7 +21,7 @@ public class Slf4jLogger extends FormattedLogger implements P6Logger{
     protected String lastEntry;
   
     @Override
-    public void logSQL(int connectionId, String s, long l, Category category, String s1,String sql) {
+    public void logSQL(int connectionId, String s, long l, Category category, String s1,String sql, String url) {
         if (!"resultset".equals(category.getName())) {
             logger.info(trim(sql));
         }

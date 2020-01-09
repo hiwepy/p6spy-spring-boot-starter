@@ -24,7 +24,6 @@ import org.springframework.context.annotation.Bean;
 import com.p6spy.engine.spy.P6DriverManagerDataSource;
 import com.p6spy.spring.boot.ext.P6spyDataSource;
 
-@EnableP6Spy
 @SpringBootApplication
 public class Application {
 	
