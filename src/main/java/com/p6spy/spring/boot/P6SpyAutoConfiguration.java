@@ -21,7 +21,7 @@ import com.p6spy.spring.boot.ext.P6spyDataSource;
 /**
  * Auto-configuration for P6Spy.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  */
 @Configuration
