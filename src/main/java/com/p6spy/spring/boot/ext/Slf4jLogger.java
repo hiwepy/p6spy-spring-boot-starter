@@ -31,18 +31,7 @@ public class Slf4jLogger extends FormattedLogger implements P6Logger{
      * @param s1           the prepared statement
      * @param sql          the executed SQL
      * @param url          the database URL
-     */
     @Override
-    /**
-     * <p>Log s q l.</p>
-     * @param connectionId
-     * @param s
-     * @param l
-     * @param category
-     * @param s1
-     * @param sql
-     * @param url
-     */
     public void logSQL(int connectionId, String s, long l, Category category, String s1,String sql, String url) {
         if (!"resultset".equals(category.getName())) {
             logger.info(trim(sql));
@@ -53,12 +42,7 @@ public class Slf4jLogger extends FormattedLogger implements P6Logger{
      * <p>Logs an exception at error level.</p>
      *
      * @param e the exception to log
-     */
     @Override
-    /**
-     * <p>Log exception.</p>
-     * @param e
-     */
     public void logException(Exception e) {
         logger.error(e.getMessage(),e);
     }
