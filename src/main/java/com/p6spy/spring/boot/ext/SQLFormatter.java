@@ -105,6 +105,10 @@ public class SQLFormatter {
             );
         }
 
+    /**
+     * <p>Perform.</p>
+     * @return the perform
+     */
         public String perform() {
 
             result.append(initial);

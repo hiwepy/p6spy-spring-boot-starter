@@ -38,6 +38,10 @@ public class P6SpyAutoConfiguration {
 	 */
 	@Bean
 	@ConditionalOnMissingBean
+    /**
+     * <p>P6 option changed listener.</p>
+     * @return the p6 option changed listener
+     */
 	protected P6OptionChangedListener p6OptionChangedListener() {
 		return new P6LogQuery();
 	}
@@ -49,6 +53,10 @@ public class P6SpyAutoConfiguration {
 	 */
 	@Bean
 	@ConditionalOnMissingBean
+    /**
+     * <p>Jdbc event listener factory.</p>
+     * @return the jdbc event listener factory
+     */
 	protected JdbcEventListenerFactory jdbcEventListenerFactory() {
 		return new DefaultJdbcEventListenerFactory();
 	}

@@ -30,6 +30,16 @@ public class P6SpyLogger extends BatchFileLogger {
      * @param url          the database URL
      */
     @Override
+    /**
+     * <p>Log s q l.</p>
+     * @param connectionId
+     * @param now
+     * @param elapsed
+     * @param category
+     * @param prepared
+     * @param sql
+     * @param url
+     */
     public void logSQL(int connectionId, String now, long elapsed, Category category, String prepared, String sql, String url) {
         if(!Category.COMMIT.equals(category) && !prepared.startsWith("select count("))
         this.logText(this.strategy.formatMessage(connectionId, now, elapsed, category.toString(), "-prepared-", sql, url));
@@ -41,6 +51,10 @@ public class P6SpyLogger extends BatchFileLogger {
      * @param text the raw log text to format and log
      */
     @Override
+    /**
+     * <p>Log text.</p>
+     * @param text
+     */
     public void logText(String text) {
         StringBuilder sb = new StringBuilder();
         //匹配到最后一个|作为分隔符
