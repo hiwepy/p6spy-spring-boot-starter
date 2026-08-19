@@ -19,7 +19,9 @@ import com.p6spy.engine.spy.option.P6OptionChangedListener;
 import com.p6spy.spring.boot.ext.P6spyDataSource;
 
 /**
- * Auto-configuration for P6Spy.
+ * <p>Auto-configuration for P6Spy.</p>
+ * <p>Configures P6Spy datasource proxy, JDBC event listener factory, and option change listeners
+ * when the P6Spy library is present on the classpath.</p>
  *
  * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
@@ -29,18 +31,36 @@ import com.p6spy.spring.boot.ext.P6spyDataSource;
 @EnableConfigurationProperties({ P6SpyProperties.class })
 public class P6SpyAutoConfiguration {
 
+	/**
+	 * <p>Creates a default P6LogQuery option change listener.</p>
+	 *
+	 * @return a new {@link P6LogQuery} instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	protected P6OptionChangedListener p6OptionChangedListener() {
 		return new P6LogQuery();
 	}
 
+	/**
+	 * <p>Creates a default JDBC event listener factory.</p>
+	 *
+	 * @return a new {@link DefaultJdbcEventListenerFactory} instance
+	 */
 	@Bean
 	@ConditionalOnMissingBean
 	protected JdbcEventListenerFactory jdbcEventListenerFactory() {
 		return new DefaultJdbcEventListenerFactory();
 	}
 
+	/**
+	 * <p>Creates a P6Spy-wrapped DataSource that intercepts JDBC calls for logging and monitoring.</p>
+	 *
+	 * @param p6spyDataSource   the datasource qualified with {@link P6spyDataSource}
+	 * @param p6OptionChangedListener provider for option change listeners
+	 * @param jdbcEventListenerFactory the JDBC event listener factory
+	 * @return the P6Spy-wrapped {@link P6DataSource}
+	 */
 	@Bean
 	@Primary
 	public P6DataSource p6DataSource(@P6spyDataSource ObjectProvider<DataSource> p6spyDataSource,

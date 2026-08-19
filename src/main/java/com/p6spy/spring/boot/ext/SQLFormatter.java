@@ -2,8 +2,11 @@ package com.p6spy.spring.boot.ext;
 
 
 /**
- * Created by luodengxiong on 2017/04/25.
- * @see https://www.cnblogs.com/luodengxiong/p/6766357.html
+ * <p>SQL statement formatter that pretty-prints SQL queries with proper indentation and line breaks.</p>
+ *
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
+ * @since 1.0.0
+ * @see <a href="https://www.cnblogs.com/luodengxiong/p/6766357.html">Original reference</a>
  */
 
 import java.util.HashSet;
@@ -63,6 +66,12 @@ public class SQLFormatter {
     static final String indentString = "    ";
     static final String initial = "\n    ";
 
+    /**
+     * <p>Formats the given SQL source string with indentation and line breaks.</p>
+     *
+     * @param source the raw SQL string to format
+     * @return the formatted SQL string
+     */
     public String format(String source) {
         return new FormatProcess(source).perform();
     }
